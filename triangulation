@@ -1,0 +1,59 @@
+#!/usr/bin/env python 
+#IO18 -> 12
+#IO04 -> 7
+import os
+execfile("ECE118_PHOTO.py")
+execfile("pickessid")
+import RPi.GPIO as GPIO
+GPIO.setmode(GPIO.BOARD)
+GPIO.setup(7, GPIO.OUT, GPIO.LOW)
+GPIO.setup(12, GPIO.OUT, GPIO.LOW)
+
+pickessid_init()
+ok_continue = True
+sig = get_signal( get_list( user_if ), essid ) 
+lum = readadc(0)  
+
+if lum > 400:
+	global ok_continue
+	ok_continue = raw_input("!!!THE ROOM IS BRIGHT, ARE YOU SURE?: ")
+
+while ok_continue:
+	sig = get_signal( get_list( user_if ), essid ) 
+	lum = readadc(0)  
+	
+	sig_in_bounds = sig < 80
+	lum_in_bounds = lum < 400
+
+	if not sig_in_bounds:
+		print "HUNTING SIGNAL!"
+		displaycmd = open('displaycmd.dat', 'w') 
+		displaycmd.write('HUNTING SIGNAL!')
+		displaycmd.close()	
+		#DO SOME MOVEMENT
+		GPIO.output(7, GPIO.HIGH)
+		GPIO.output(12, GPIO.HIGH)
+	elif not lum_in_bounds:
+		print "GOOD SIGNAL"
+		print "LOOKING FOR HIDING SPOT"
+		displaycmd = open('displaycmd.dat', 'w') 
+		displaycmd.write('GOOD SIGNAL\nHIDING')
+		displaycmd.close()	
+		GPIO.output(7, GPIO.HIGH)
+		GPIO.output(12, GPIO.HIGH)
+		sleep(1)
+		GPIO.output(7, GPIO.LOW)
+		GPIO.output(12, GPIO.HIGH)
+	else:
+		print "ATTACKING ACCESSPOINT" 
+		displaycmd = open('displaycmd.dat', 'w') 
+		displaycmd.write('ATTACKING\nACCESSPOINT')
+		displaycmd.close()	
+		GPIO.output(7, GPIO.LOW)
+		GPIO.output(12, GPIO.LOW)
+	sleep(2)
+
+'''
+GPIO.output(7, GPIO.HIGH)
+GPIO.output(12, GPIO.HIGH)
+'''

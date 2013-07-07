@@ -1,0 +1,32 @@
+          Cell 01 - Address: 28:C6:8E:72:02:6A
+                    ESSID:"NETGEAR42"
+                    Encryption key:on
+                    Quality=100/100  Signal level=92/100  
+          Cell 02 - Address: 00:21:D8:D5:1C:70
+                    ESSID:"UCSD-PROTECTED"
+                    Encryption key:on
+                    Quality=100/100  Signal level=43/100  
+          Cell 03 - Address: 00:21:D8:D5:1F:A0
+                    ESSID:"UCSD-PROTECTED"
+                    Encryption key:on
+                    Quality=100/100  Signal level=58/100  
+          Cell 04 - Address: 00:1D:70:93:9B:60
+                    ESSID:"UCSD-PROTECTED"
+                    Encryption key:on
+                    Quality=100/100  Signal level=13/100  
+          Cell 05 - Address: 00:1D:70:93:9B:62
+                    ESSID:"eduroam"
+                    Encryption key:on
+                    Quality=100/100  Signal level=25/100  
+          Cell 06 - Address: 00:21:D8:D5:1F:A2
+                    ESSID:"eduroam"
+                    Encryption key:on
+                    Quality=100/100  Signal level=58/100  
+          Cell 07 - Address: 00:21:D8:D5:1F:A1
+                    ESSID:"UCSD-GUEST"
+                    Encryption key:off
+                    Quality=100/100  Signal level=59/100  
+          Cell 08 - Address: 00:1D:70:93:9B:61
+                    ESSID:"UCSD-GUEST"
+                    Encryption key:off
+                    Quality=100/100  Signal level=10/100  

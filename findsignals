@@ -1,0 +1,5 @@
+#!/bin/bash
+iwlist wlan0 scan > .signaltmp
+awk '/Cell|ESSID|Quality|Encryption/' .signaltmp > signallist
+rm .signaltmp
+cat signallist

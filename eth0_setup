@@ -1,0 +1,2 @@
+#!/bin/bash
+ifconfig eth0 10.10.0.1

@@ -1,0 +1,2 @@
+#!/bin/sh
+nohup /root/Scripts/ECE118_CHAR.py &
